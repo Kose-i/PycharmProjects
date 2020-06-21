@@ -1,10 +1,11 @@
 
 import sys, os
 #import dataset
-import keras.dataset.mnist
+#from keras.datasets import load_mnist
+from keras.datasets.mnist import load_data
 sys.path.append(os.pardir)
 
-(x_train, y_train), (x_test, y_test) = mnist.load_mnist(flatten=True, normalize=False)
+(x_train, y_train), (x_test, y_test) = load_data()
 #(x_train, y_train), (x_test, y_test) = dataset.mnist.load_mnist(flatten=True, normalize=False)
 print(x_train.shape)
 print(y_train.shape)
