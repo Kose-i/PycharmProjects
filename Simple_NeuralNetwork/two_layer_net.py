@@ -3,6 +3,7 @@ sys.path.append(os.pardir)
 from common.functions import *
 from common.gradient import numerical_gradient
 
+
 class TwoLayerNet:
     def __init__(self, input_size, hidden_size, output_size, weight_init_std=0.01):
         self.params = {}
@@ -37,6 +38,7 @@ class TwoLayerNet:
         grads['b1'] = numerical_gradient(loss_W, self.params['b1'])
         grads['W2'] = numerical_gradient(loss_W, self.params['W2'])
         grads['b2'] = numerical_gradient(loss_W, self.params['b2'])
+
         return grads
 
 if __name__=='__main__':
