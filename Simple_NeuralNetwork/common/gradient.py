@@ -15,7 +15,9 @@ def _numerical_gradient_1d(f, x):
         grad[idx] = (fxh1 - fxh2) / (2*h)
 
         x[idx] = tmp_val # 値を元に戻す
+
     return grad
+
 
 def numerical_gradient_2d(f, X):
     if X.ndim == 1:
@@ -27,6 +29,8 @@ def numerical_gradient_2d(f, X):
             grad[idx] = _numerical_gradient_1d(f, x)
 
         return grad
+
+
 def numerical_gradient(f, x):
     h = 1e-4 # 0.0001
     grad = np.zeros_like(x)
@@ -44,4 +48,5 @@ def numerical_gradient(f, x):
 
         x[idx] = tmp_val # 値を元に戻す
         it.iternext()
-        return grad# coding: utf-8
+
+    return grad
