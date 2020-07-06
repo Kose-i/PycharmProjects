@@ -40,6 +40,7 @@ class Affine:
         self.dW = np.dot(self.x.T, dout)
         self.db = np.sum(dout, axis=0)
         return dx
+
 class SoftmaxWithLoss:
     def __init__(self):
         self.loss = None
