@@ -1,8 +1,11 @@
 from common.two_layer_net import TwoLayerNet
-from SGD_class import SGD
 from keras.datasets.mnist import load_data
 from keras.utils import np_utils
-import tensorflow
+import numpy as np
+
+#from SGD_class import SGD
+#from Momentum_class import Momentum
+from AdaGrad_class import AdaGrad
 
 if __name__=='__main__':
 
@@ -12,7 +15,9 @@ if __name__=='__main__':
     t_train = np_utils.to_categorical(t_train, 10).astype('float32')
     t_test = np_utils.to_categorical(t_test, 10).astype('float32')
     network = TwoLayerNet(input_size=784, hidden_size=50, output_size=10)
-    optimizer = SGD()
+    #optimizer = SGD()
+    #optimizer = Momentum()
+    optimizer = AdaGrad()
 
     iters_num = 10000
     train_size = x_train.shape[0]
